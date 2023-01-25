@@ -63,4 +63,18 @@ defmodule Cards do
       end
     end
 
+
+    #Create hand and pass result to all methods in one go
+    #def create_hand(hand_size) do
+        #deck = Cards.create_deck
+        #deck = Cards.shuffle_cards(deck)
+       # hand = Cards.deal_cards(deck, hand_size)
+   # end
+
+      #Pipe operator function to condence file and automatically assign variable deck
+    def create_hand(hand_size) do
+        Cards.create_deck
+        |> Cards.shuffle_cards
+        |> Cards.deal_cards(hand_size)
+    end
 end
